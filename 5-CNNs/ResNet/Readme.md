@@ -50,7 +50,7 @@ This makes the output of deeper layers more controlled by previous layers and do
 #### What if we need different output size
 Usually, the input size and output size are different, to have that with *ResNet*, we add some weights in the shortcut, so the the equation can be as follows
 
-$H(x) = f(x) + W_s . x$
+$$H(x) = f(x) + W_s . x$$
 
 $W_s$ can be like identity matrix that simply changes the size, so it adds no additional parameters, or it can be some learnable weights (making the the shortcut a one dense layer).
 
