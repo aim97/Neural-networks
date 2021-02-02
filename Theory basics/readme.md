@@ -1,6 +1,11 @@
 # Neural Networks
 
-The concept of neural networks has been around for a many years, but it only start to shine in the past two decades thanks to the availability of enough computing resources to support it at affordable prices specifically referring to GPUs.
+The concept of neural networks has been around for a many years, but it only start to shine in the past few decades thanks to the availability of enough computing resources to support it at affordable prices specifically referring to GPUs.
+
+In this section we go over the intuition of neural networks, and why do we need them.  
+Then our first neural network or actually just a single *perceptron*
+Then how we get this neural network to *learn* and how we use it after wards.
+And finally some examples of problems that neural network can help with.
 
 ## what is a Neural Network
 
@@ -31,19 +36,7 @@ this is done by training the neural networks on previously collected data, itera
 sufficient performance level, then it's ready to work, that is we can feed unanswered questions to the neural 
 net and it should provide an answer, this is the general idea, how to build a neural nets and its components, 
 how the training occurs, how we use the neural network afterwards and what kind of problems we expect a neural
-network to solve is something we will get to shortly.
-
-There are many types of problems neural networks are used for the most dominant of which are  
-
-### Regression
-
-a Regression problem is one in which the output has a continuous distribution rather than a discrete one, 
-like the prediction of stock prices based on their previous values.  
-it's not quite likely to use a neural net for this
-
-### Classification
-
-it's a problem where you need to classify a certain object to one or more classes, like object recognition.
+network to solve is something we will get to shortly, but first let's discuss our very first and simlest neural network, *the perceptron*.
 
 ## Perceptron
 
@@ -65,3 +58,18 @@ this is the neural network structure of all layers and neurons in it.
 it's a function that call tell how good or bad the neural network is doing by comparing the neural network output to the expected output
 
 #### Optimizer
+
+
+There are many types of problems neural networks are used for the most dominant of which are  
+
+## The problems that can be solved by Neural-Nets.
+
+### Regression
+
+a Regression problem is one in which the output has a continuous distribution rather than a discrete one, 
+like the prediction of stock prices based on their previous values.  
+it's not quite likely to use a neural net for this
+
+### Classification
+
+it's a problem where you need to classify a certain object to one or more classes, like object recognition.
