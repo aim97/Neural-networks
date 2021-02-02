@@ -88,15 +88,16 @@ So the what to take out from this paragraph is to **always make sure the differe
 
 ## What is Variance problem.  
 
-##Solutions
-##### Bias problem
+## Solutions
+
+### Bias problem
 This is what we start solving first, we need to aim at raising the training set error and there are
 multiple methods we can use:  
 1. Use bigger network
 2. Train longer
 3. a Different Neural network architecture may help like (CNN, RNN, ResNet, Inception-Net, ...)
  
-##### Variance problem - Over-fitting
+### Variance problem - Over-fitting
 Once we have taken care of the Bias problem we should consider the variance.
 1. Regularization
     - Regularization parameter

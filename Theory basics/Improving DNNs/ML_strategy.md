@@ -1,30 +1,23 @@
 # Structuring Machine Learning Projects
-This section will discuss the process of building a Deep learning model, the steps you need to take through out
-the development, and how to solve the problems that arise in during it in the most effective way.  
+This section will discuss the process of building a Deep learning model, the steps you need to take through out the development, and how to solve the problems that arise in during it in the most effective way.  
+This Section is based on the Deeplearning.ai course with same name, and is made to summarize and focus its content.
 
 ### Why?
-The process of building a Deep learning model can be quite lengthy, when you reach a low accuracy there are many 
-things you might want to try, like getting more data, adjusting the hyper parameters (learning rate, B.N. beta, ...etc),
-changing the optimization technique, or using a whole new neural network architecture.  
+The process of building a Deep learning model can be quite lengthy, when you reach a low accuracy there are many  things you might want to try, like getting more data, adjusting the hyper parameters (learning rate, B.N. beta, ...etc), changing the optimization technique, or using a whole new neural network architecture.  
 
-All these solutions are great but which one is most effective?, you may spend months collecting more data only to get
-slight increase in accuracy, only to realize afterwards that you could solve the problem by adding more layers, or using
-a new network architecture could have solved your problem faster.
+All these solutions are great but which one is most effective?, you may spend months collecting more data only to get slight increase in accuracy, only to realize afterwards that you could solve the problem by adding more layers, or using a new network architecture could have solved your problem faster.
 
-This section is like guidelines and bast practices to take to develop Deep learning models faster.
+This section is like guidelines and best practices to take to develop Deep learning models faster.
 
 ### ILOs
 After completing this section you should be able to answer the following questions about your ML project.
 1. If the performance is low, what is the problem?
-2. How to best fix this problem while causing as little effect as possible on other metrics?
+2. How to best address the problem while avoiding any unintended effects on other metrics?
 
 
 ## Orthogonalization
-It's a term used to the act of isolating the effects of your actions, simply put, you want any action 
-you might take to control at most 1 variable, for example, *Batch normalization* is an action that **ONLy** 
-affects *variance*, *adding more data* is an action that should **ONLY** affect *avoidable-bias*.
-
-##### Why use Orthogonalization?
+It's the act of isolating the effects of your actions, to make sure no unintended conequences would arise, for example, *Batch normalization* is an action that **ONLy**  affects *variance*, *adding more data* is an action that should **ONLY** affect *avoidable-bias*.
+### Why use Orthogonalization?
 it makes results easier to understand, and makes decision making easier, when ever you find a problem during
 the development, you first identify the problem, is it *bias*, *variance*, *both*, *mismatch issue*, ...etc.  
 
@@ -132,18 +125,14 @@ to form a realistic cost function, so it's always better to use the first method
 we want.   
 
 #### Notes
-- Suppose you are building a "Cat sharing" app, it allows users to share their cat images, you decided to use a 
-classifier to check if the uploaded image is a cat or not before allowing it, which would you prefer a classifier
-with 99% accuracy but detects but it can allow porn images, or another with 97% accuracy but doesn't allow porn images,
-you and your customers would prefer the second one since it prevent Porn more, but according your evaluation metrics 
-the first is better. **when such a situation occurs, it means your evaluation metric is not right**, you need to 
-re-evaluate it, so How do we prevent our model from allowing Porn images?, in this simple case we can modify the
-cost function by adding a weight to the loss of each sample, if the miss-classified sample is normal the weight
-is just 1, when it's a Porn image the weight is a large number like 10, this way the model will be pushed to prioritize
-the prevention of Porn images.  
 
-This fault occurred because the evaluation metric wasn't set correctly, those metrics are not just the problem
-definition, the metrics you create must really reflect the needs of your application, and the real working environment.
+Suppose you are building a "Cat sharing" app, it allows users to share their cat images. you decided to use a classifier to check if the uploaded image is a cat or not before allowing it.
+
+Which would you prefer a classifier with 99% accuracy that allows porn images, or another with 97% accuracy but doesn't allow porn images, you and your customers would prefer the second one since it prevent Porn more, but according your evaluation metrics the first is better. **when such a situation occurs, it means your evaluation metric is not right**, you need to re-think your evaluation matrics.
+
+So how do we prevent our model from allowing Porn images?, in this simple case we can modify the cost function by adding a weight to the loss of each sample, if the miss-classified sample is normal the weight is just 1, when it's a Porn image the weight is a large number like 10, this way the model will be pushed to prioritize the prevention of Porn images.  
+
+This fault occurred because the evaluation metric wasn't set correctly, those metrics are not just the problem definition, the metrics you create must really reflect the needs of your application, and the real working environment.
  
 ## Summary
 1. Orthogonalization means that you use *one technique* to carry *one job* and affect only *one variable*.
