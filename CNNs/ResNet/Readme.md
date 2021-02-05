@@ -33,8 +33,8 @@ What if we add a shortcut pass parallel to the added layers, and formulate the o
 This way it is guaranteed that the output will be at least as good as the output of the shallow network.
 
 ### More details
-<p style='text-align:center;'>
-<img src='../../images/ResNet.PNG' alt='Resnet'>
+<p align='center'>
+  <img src='../../images/ResNet.PNG' alt='Resnet'>
 </p>
 
 Assume the target function we need to learn is $H(x)$, we let the stacked non-linear layer learn the mapping $f(x) = H(x) - x$, now the orignal mapping is recast as $H(x) = f(x) + x$.
