@@ -5,7 +5,7 @@
 ## Some Variations
 
 ### ResNet
-<p style='text-align:center;'>
+<p align='center'>
 <img src='../images/ResNet.PNG' alt='Resnet'>
 </p>
 
