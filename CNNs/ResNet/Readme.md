@@ -33,7 +33,7 @@ What if we add a shortcut pass parallel to the added layers, and formulate the o
 This way it is guaranteed that the output will be at least as good as the output of the shallow network.
 
 ### More details
-<p style='text-align:center;'>
+<p align='center'>
 <img src='../../images/ResNet.PNG' alt='Resnet'>
 </p>
 

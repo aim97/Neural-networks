@@ -1,25 +1,28 @@
 ## Results
-<p style='padding: 0 auto;text-align:center;'>
+<p align='center'>
 <img src='../../images/VGGvsPlaiNvsResNet.PNG' alt=''>
 </p>
-<p style='padding:0 10%;text-align:center;font-size:0.65em;'>
-  Example network architectures for ImageNet. 
-  Left: the VGG-19 model (19.6 billion FLOPs)
-  Middle: a plain network with 34 parameter layers (3.6 billion FLOPs).
-  Right: a residual network with 34 parameter layers (3.6 billionFLOPs). The dotted shortcuts increase dimensions.
-</p>
 
+<small align="center">
+  Example network architectures for ImageNet. <br>
+  Left: the VGG-19 model (19.6 billion FLOPs)  <br />
+  Middle: a plain network with 34 parameter layers (3.6 billion FLOPs). <br />
+  Right: a residual network with 34 parameter layers (3.6 billionFLOPs). The dotted shortcuts increase dimensions.
+</small>
+
+---
+  
 This paper focuses on the comparison between plain networks and their ResNet counterparts, having same number of layers but just adding the shortcut links, in all these models shortcut links are just identity mappings, or zero-padding.
 We consider Plain vs ResNet Networks with 18, 34, 50, 101, 152 layers, the models are as explained in the picture below.
-
-![Models blocks](../../images/Resnet-Model-compare.png)
-
+<p align='center'>
+<img src='../../images/Resnet-Model-compare.png' >
+</p>
 **Note**: 
 * convB_X: *B* is the block number, *X* is the layer number within the block.
 * the first layer of some blocks, namely, conv3_1, conv4_1, conv5_1 perform downsampling with stride on 1.
 
 ### Results
-<p style='text-align:center;'>
+<p align='center'>
 <img src='../../images/Resnet-Model-compare-chart.png'>
 <img src='../../images/Resnet-Model-compare-table-18~34.png'>
 </p>
@@ -47,7 +50,9 @@ There are 3 approaches
 2. Projection shortcuts are used when changing dimensions, otherwise use identity mapping.
 3. All shortcuts are projections.
 
-![Compare between different model and their respective top-1 and top-5 errors](../../images/Resnet-34-ABC.png)
+<p align='center'>
+<img title='Compare between different model and their respective top-1 and top-5 errors' src='../../images/Resnet-34-ABC.png'>
+</p>
 
 adding more parameters surely improves the perfromance, so the options above are sorted from least to best, **however** it's worth mentioning that:
 1. The parameter free approach is not far from the other two, and it has no additional costs, so it's very acceptable.
@@ -55,7 +60,10 @@ adding more parameters surely improves the perfromance, so the options above are
 3. The last approach is the best, but it comes at a high cost of operations, the projection matrices won't be small usually.
 
 ## Deeper BottleNeck Architectures
-![BottleNeck Resnet](../../images/Resnet-bottleNeckNetwork.png)
+<p align='center'>
+<img title='BottleNeck Resnet' src='../../images/Resnet-bottleNeckNetwork.png'>
+</p>
+
 If you have concerns about the training time of the neural network, you can use this *economic version* of Residual block (*BottelNeck design*).
 
 Instead of 2 layers, we have 3 Conv layers, the middle one is 3X3, while the other 2 are 1X1.
@@ -66,6 +74,9 @@ In this approach, using projection links would increase the training time (doubl
 **Note:** all Resnet networks above 34 layers mentioned in this paper are using BottleNeck blocks to reduce training time.
 
 ## Over 1000 layers
-![](../../images/Resnet-moreCharts.png)
+<p align='center'>
+<img  src='../../images/Resnet-moreCharts.png'>
+</p>
+
 The accuracy of the Resnet1202 is less than that of the Resnet101, But we argue that the model is too large, unnecessarily large, and the cause of the degradation in accuracy is overfitting, which can be address by regularization methods, such as [maxout](https://arxiv.org/pdf/1302.4389.pdf) or dropout ... etc.  
 But this is not within the scope of this paper.
