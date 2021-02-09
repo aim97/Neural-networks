@@ -58,7 +58,7 @@ model = ResNet50()
 
 ### preprocessing
 
-You can use this model [but not this fast]('../../../../images/reset_preprocessing_meme.png'), you need to apply some preprocessing to the input images before it's passed to the model.
+You can use this model [but not this fast](../../images/reset_preprocessing_meme.png), you need to apply some preprocessing to the input images before it's passed to the model.
 
 ```python
 # in order to use the model you need to first apply some preprocessing to input image
