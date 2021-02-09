@@ -22,7 +22,7 @@
     - [X] Residual network architecture
     - [X] The results obtained from the ResNet paper
     - [ ] Implement the Resnet models
-    - [ ] Tensorflow Resnet
+    - [X] Tensorflow Resnet
   - [ ] Inception network
   - [ ] Datasets
     - [ ] ImageNet
