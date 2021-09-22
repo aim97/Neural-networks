@@ -7,10 +7,13 @@ class TestingPlotCallback(tf.keras.callbacks.Callback):
     super(TestingPlotCallback, self).__init__()
     self.epochs_step = epochs_step
     
-    self.fig = plt.figure(figsize=(25, 5))
-    self.fig.suptitle('Test Prediction vs Test samples', fontsize=10, color='forestgreen')
+    rows = (steps + 4) // 5
+    cols = 5
 
-    self.plots = self.fig.subplots(1, 5).flatten()
+    self.fig = plt.figure(figsize=(20, rows * 2))
+    self.fig.suptitle('Test Prediction vs Test samples', fontsize=10, color='forestgreen')
+    
+    self.plots = self.fig.subplots(rows, cols).flatten()
     self.test_data = test_data
 
   def on_epoch_end(self, epoch, logs={}):
@@ -33,10 +36,12 @@ class LossPlotCallback(tf.keras.callbacks.Callback):
     super(LossPlotCallback, self).__init__()
     self.epochs_step = epochs_step
 
-    self.fig = plt.figure(figsize=(25, 5))
+    rows = (steps + 4) // 5
+    cols = 5
+    self.fig = plt.figure(figsize=(20, rows * 2))
     self.fig.suptitle('Loss', fontsize=20, color='forestgreen')
     
-    self.plots = self.fig.subplots(1, 5).flatten()
+    self.plots = self.fig.subplots(rows, cols).flatten()
 
   def on_train_begin(self,logs={}):
       self.losses = []
