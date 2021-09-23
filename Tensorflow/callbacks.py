@@ -4,10 +4,10 @@ import tensorflow as tf
 from math import floor
 
 
-class PlottingCallback(tf.keras.callbacks.Callback):
-  def __init__(self, epoch_step, steps):
+class PlottingCallback:
+  def __init__(self, epochs_step, steps):
     super(PlottingCallback, self).__init__()
-    self.epoch_step = epoch_step
+    self.epochs_step = epochs_step
     self.steps = steps
 
     rows = (steps + 4) // 5
@@ -19,22 +19,10 @@ class PlottingCallback(tf.keras.callbacks.Callback):
 
     self.plots = self.plots.flatten()
 
-    
-
-class TestingPlotCallback(tf.keras.callbacks.Callback):
+class TestingPlotCallback(PlottingCallback, tf.keras.callbacks.Callback):
   def __init__(self, steps = 5, epochs_step=10, test_data=None):
-    super(TestingPlotCallback, self).__init__()
-    self.epochs_step = epochs_step
+    super(TestingPlotCallback, self).__init__(epochs_step, steps)
     
-    rows = (steps + 4) // 5
-    cols = 5
-    self.fig, self.plots = plt.subplots(rows, cols, figsize=(17, rows * 3), sharex=True, sharey=True)
-    # self.fig = plt.figure(figsize=(20, rows * 2))
-    self.fig.suptitle('Test Prediction vs Test samples', fontsize=15, color='forestgreen')
-    self.fig.tight_layout(pad=3.0)
-    self.fig.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), ncol=5)
-
-    self.plots = self.plots.flatten()
     self.test_data = test_data
 
     y_min, y_max = min(test_data[1])[0], max(test_data[1])[0]
@@ -67,18 +55,9 @@ class TestingPlotCallback(tf.keras.callbacks.Callback):
       ax.set_yticks(np.arange(y_min, y_max, y_step))
       self.fig.add_subplot(ax)
 
-class LossPlotCallback(tf.keras.callbacks.Callback):
+class LossPlotCallback(PlottingCallback, tf.keras.callbacks.Callback):
   def __init__(self, steps = 5, epochs_step=10):
-    super(LossPlotCallback, self).__init__()
-    self.epochs_step = epochs_step
-
-    rows = (steps + 4) // 5
-    cols = 5
-    self.fig = plt.figure(figsize=(17, rows * 2.3))
-    self.fig.suptitle('Loss', fontsize=15, color='forestgreen')
-    self.fig.tight_layout(pad=3.0)
-    
-    self.plots = self.fig.subplots(rows, cols).flatten()
+    super(LossPlotCallback, self).__init__(epochs_step, steps)
 
   def on_train_begin(self,logs={}):
       self.losses = []
