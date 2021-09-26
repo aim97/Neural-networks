@@ -30,23 +30,26 @@ They rised to work where expert systems had failed, the main problems with exper
 1. They are hard to develop and maintain.
 2. They need a knowledge base.
 
-Expert systems are based entirely own the ability of humans to collect their knowledge into a knowledge base that the inference engine can reason about, but for a problem like object detection, to which humans can't write a a set of rules to solve it, or at least not enough rules to cover all cases, it inference engine won't be able to reach the required results, and leaves us with no choice but to search elsewhere for a solution.
+Expert systems are based entirely on the ability of humans to collect their knowledge into a knowledge base that the inference engine can reason about, but for a problem like object detection, to which humans can't write a a set of rules to solve it, or at least not enough rules to cover all cases, it inference engine won't be able to reach the required results, and leaves us with no choice but to search elsewhere for a solution.
 
 If we think about it, An expert system is a way to describe intelligence as we know it, it simply simulates the process of making an intelligent decisions based on observations, and knowledge, but this approach have failed us. so how can we make a model that have an intelligent behaviour now?, brain is the part of our body that is responsible for control, and making decisions, and all approaches we made were to simulate its behaviour, but the expert system, while it have sucesseded in inference part of intelligence, it seems intelligence is not just inference, and so it couldn't reach the results we wanted.
 
 Trying to simualte the brain behaviour, requires to understand every part of our human life, the choices of the brain and find some kind of reasons for them, then build a model that has the same behaviour, some of which are emotional and simply irrational. you can't build a logical model of something that is by definition is irrational.  
 
-So instead of trying to build a model that simulates the brain high level behaviour (decision making, identifying objects, emotion recognition, localization, landmark detection), we will build a model that simulates the brain itself (the interaction between neurons and neurons them selves), since the brain is responsible for doing all those tasks, making something similar to it, should help us perform those tasks as well.
+So instead of trying to build a model that simulates the brain high level behaviour (decision making, identifying objects, emotion recognition, localization, landmark detection), we will build a model that simulates the brain itself (the interaction between neurons and neurons them selves), since the brain is responsible for doing all those tasks, making something similar to it, should help us perform those tasks as well, and that's how the idea of neural networks came to life.
 
+## Human brain
+
+Before we start with building our artifical brain, we need to understand the structure of the real thing, and how it works.
+
+<!-- TODO add more content here
+1. image of nerve cells
+2. explain how it works
+ -->
 
 ## what is a Neural Network
 
-it's the idea of simulating human level intelligence by using a model that follows the neural structure or 
-human nerves and how they interact with one another, as well as the surrounding environment.
-A neural network is basically a connection of neurons, organized in layers, unlike normal AI methods where
-you have to know how to solve the problem in order to get it solved that 's to find an algorithm, a set of 
-steps that you can follow in order to reach the solution, neural networks are used to learn those steps on 
-their own from collected data.  
+it's the idea of simulating human level intelligence by using a model that follows the neural structure or human nerves and how they interact with one another, as well as the surrounding environment. A neural network is basically a connection of neurons, organized in layers, unlike normal AI methods where you have to know how to solve the problem in order to get it solved that 's to find an algorithm, a set of steps that you can follow in order to reach the solution, neural networks are used to learn those steps on their own from collected data.  
 
 for a neural network to work, it needs to be *trained*, as we said the idea of neural networks is to make an
 intelligent system that can learn through training, just like humans do, you need to train on a certain
