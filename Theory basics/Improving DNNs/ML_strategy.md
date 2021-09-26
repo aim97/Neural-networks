@@ -153,7 +153,7 @@ Which would you prefer a classifier with 99% accuracy that allows porn images, o
 So how do we prevent our model from allowing Porn images?, in this simple case we can modify the cost function by adding a weight to the loss of each sample, if the miss-classified sample is normal the weight is just 1, when it's a Porn image the weight is a large number like 10, this way the model will be pushed to prioritize the prevention of Porn images.  
 
 This fault occurred because the evaluation metric wasn't set correctly, those metrics are not just the problem definition, the metrics you create must really reflect the needs of your application, and the real working environment.
- 
+
 ## Summary
 
 1. Orthogonalization means that you use *one technique* to carry *one job* and affect only *one variable*.

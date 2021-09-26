@@ -2,10 +2,42 @@
 
 The concept of neural networks has been around for a many years, but it only start to shine in the past few decades thanks to the availability of enough computing resources to support it at affordable prices specifically referring to GPUs.
 
-In this section we go over the intuition of neural networks, and why do we need them.  
-Then our first neural network or actually just a single *perceptron*
-Then how we get this neural network to *learn* and how we use it after wards.
-And finally some examples of problems that neural network can help with.
+In this section we go over the intuition of neural networks, what they can help with, and the general process of training a neural network.
+
+1. Intelligence
+2. Artificial Intelligence
+3. Neural Networks
+4. General process of training a neural network
+
+## Intelligence
+
+It's a word we use frequenctly to describe an act, a choice or a disicion that yielded an outcome of interest to the one who made it, there are multiple definitions of intelligence but let's just stick with this one for now. for example when you make a choice to sell your stocks then right the next day the their prices go down, someone would say you had an insight into how the market was going and based on your observation you predicted such outcome and acted upon it, this is an intelligent behaviour based on our definition above.  
+
+The way we see it here, is that intelligence is a logical action, you get observations, you predict what will happen, and based on the prediction you choose an action that maximizes your best interest, and you know what we love about logic, it's that no one can disagree with it, it has certain rules and you simply follow them to reach an answer, and you know who is also good at following rules, sure they are computers.
+
+Computers are good at following steps and rules, and so by describing the rules and steps a human would carry out to reach and "intelligent" decision, a computer can follow those rules to reach the same disicion. at first we would explain what we do as algorithms and simply have the computer follow them, that's why introduction courses to AI usually start with search techniques like dfs and hill climbing, they are simply algorithms to search for best decision that maximizes a certain performance metric. then we reach what i consider as the end of the road for this kind on techniques when the inference engine was made.
+
+Inference engines are simply programs to carry out logical inference, something like if *Ahmed said he will go play ball*, and *The only ball game Ahmed plays is football* then *Ahmed will play football*, it processes previous knowledge to reach new knowledge that would then be added to its knowledge. inference engines are the core of expert systems. in order to build an expert system, you first need to specify what kind of experience you want it to acquire, then gather a group of people who specialize in that field and have them write all that they know no matter how trivial in the form of rules (if possible), then the next step is to get an inference engine whose only job is to reason about those rules and answer specified queries. expert systems are great, they took us to the moon, they were used in business, games, ... etc, they can do a lot. one of the greatest feautes about them is their ability to provide steps and reasons for their choices making undertanding them easier, and it sure is a great help for debugging when you can see exactly what went wrong and why, but it's not much of a help, and we will know why very soon.  
+
+As great as expert systems might be they have their own limitations, as you may have guessed, building the knowledge based with the cooperation of multiple professionals, is not as easy task, and even small mistakes can't be tolerated, even the text books we have to study from may include mistakes, but it doesn't affect humans much, for a computer however this can be fatal, for example if the knowledge base has two contradicting rules, or data, which will the inference engine follow. what if not all knowledge was added, usually something may be forgotten, how will the system work then, building a knowledge base is a lot of work.
+
+Another big problem for expert system is their rigidity, the system is based on logic, even when it added probability to its judegements it still didn't completely solve the problem, improvements in expert systems became very hard as time went on. and they don't reach the desired performance for humanly simple tasks, like object detection, classification, ... etc, and as time went on they became obsolete.
+
+## Neural networks
+
+They rised to work where expert systems had failed, the main problems with expert systems were
+
+1. They are hard to develop and maintain.
+2. They need a knowledge base.
+
+Expert systems are based entirely own the ability of humans to collect their knowledge into a knowledge base that the inference engine can reason about, but for a problem like object detection, to which humans can't write a a set of rules to solve it, or at least not enough rules to cover all cases, it inference engine won't be able to reach the required results, and leaves us with no choice but to search elsewhere for a solution.
+
+If we think about it, An expert system is a way to describe intelligence as we know it, it simply simulates the process of making an intelligent decisions based on observations, and knowledge, but this approach have failed us. so how can we make a model that have an intelligent behaviour now?, brain is the part of our body that is responsible for control, and making decisions, and all approaches we made were to simulate its behaviour, but the expert system, while it have sucesseded in inference part of intelligence, it seems intelligence is not just inference, and so it couldn't reach the results we wanted.
+
+Trying to simualte the brain behaviour, requires to understand every part of our human life, the choices of the brain and find some kind of reasons for them, then build a model that has the same behaviour, some of which are emotional and simply irrational. you can't build a logical model of something that is by definition is irrational.  
+
+So instead of trying to build a model that simulates the brain high level behaviour (decision making, identifying objects, emotion recognition, localization, landmark detection), we will build a model that simulates the brain itself (the interaction between neurons and neurons them selves), since the brain is responsible for doing all those tasks, making something similar to it, should help us perform those tasks as well.
+
 
 ## what is a Neural Network
 
@@ -40,8 +72,16 @@ network to solve is something we will get to shortly, but first let's discuss ou
 
 ## Perceptron
 
-it's the most simple form of a neural network, just one nerve,
-**How does a Perceptron work?**
+it's the most simple form of a neural network, just one nerve.  
+
+### Human nervous system
+
+The human nervous system is composed of a number of nerves, nerves have multiple types, but they have a general form:  
+
+1. 
+
+
+**How does a Perceptron work?**  
 like a nerve in your body a perceptron receives input signals, treats each of them based on their value, and
 computes a function, if the value of the neuron is beyond a certain limit it fires otherwise it doesn't 
 
