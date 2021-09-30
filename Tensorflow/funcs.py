@@ -1,2 +1,0 @@
-def disp():
-  print('Hello')
