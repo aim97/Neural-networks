@@ -25,10 +25,9 @@
 
 - CNN
   - [ ] Convolutional network
-  - [ ] ResNet
+  - [x] ResNet
     - [x] Residual network architecture
     - [x] The results obtained from the ResNet paper
-    - [ ] Implement the Resnet models
     - [x] Tensorflow Resnet
   - [ ] Inception network
   - [ ] Object detection: YOLO and the gang
