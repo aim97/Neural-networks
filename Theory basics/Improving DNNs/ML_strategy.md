@@ -1,44 +1,53 @@
 # Structuring Machine Learning Projects
-This section will discuss the process of building a Deep learning model, the steps you need to take through out the development, and how to solve the problems that arise in during it in the most effective way.  
+
+This section will discuss the process of building a Deep learning model, the steps you need to take through out the development, and how to solve the problems in the most effective way.  
 This Section is based on the Deeplearning.ai course with same name, and is made to summarize and focus its content.
 
-### Why?
+## ML Strategy
+
 The process of building a Deep learning model can be quite lengthy, when you reach a low accuracy there are many  things you might want to try, like getting more data, adjusting the hyper parameters (learning rate, B.N. beta, ...etc), changing the optimization technique, or using a whole new neural network architecture.  
 
 All these solutions are great but which one is most effective?, you may spend months collecting more data only to get slight increase in accuracy, only to realize afterwards that you could solve the problem by adding more layers, or using a new network architecture could have solved your problem faster.
 
 This section is like guidelines and best practices to take to develop Deep learning models faster.
 
-### ILOs
+## ILOs
+
 After completing this section you should be able to answer the following questions about your ML project.
+
 1. If the performance is low, what is the problem?
 2. How to best address the problem while avoiding any unintended effects on other metrics?
 
+content
+
+1. Orthogonalization
+2. Steps of Deep learning model development
+3. Single Number Evaluation metrics
 
 ## Orthogonalization
+
 It's the act of isolating the effects of your actions, to make sure no unintended conequences would arise, for example, *Batch normalization* is an action that **ONLy**  affects *variance*, *adding more data* is an action that should **ONLY** affect *avoidable-bias*.
+
 ### Why use Orthogonalization?
-it makes results easier to understand, and makes decision making easier, when ever you find a problem during
-the development, you first identify the problem, is it *bias*, *variance*, *both*, *mismatch issue*, ...etc.  
 
-once the problem is known you only try the set of methods the affect the variable that has a problem, 
-if you don't use orthogonalization, then whenever you try to solve one variable you may end up missing with
-another one, and getting into a lengthy development cycles to tune everything together at the same time.  
+it makes results easier to understand, and helps with decision making, whenever you find a problem during the development, you first identify the problem, is it *bias*, *variance*, *both*, *mismatch issue*, ...etc.  
 
-However once you make sure that the methods you use only affect one variable, then you can tune each of them 
-independently which is much easier.
+once the problem is known you only try the set of methods that affect the variable that has a problem, if you don't use orthogonalization, then whenever you try to solve one variable you may end up missing with another one, and getting into a lengthy development cycles to tune everything together at the same time.  
 
-Actually, one of the techniques that affect more than one variable is **Early stopping**, it affects the training 
-as well as the validation accuracy, that's why it's not prefered.
+However once you make sure that the methods you use only affect one variable, then you can tune each of them independently which is much easier.
+
+Actually, one of the techniques that affect more than one variable is **Early stopping**, it affects the training as well as the validation accuracy, that's why it's not prefered.
 
 ## Steps of Deep learning model development
+
 your priorities are as listed below in order:
+
 1. Improve your performance on training set as much as possible.
     . Another optimizer
     . Bigger network
-    . ...etc 
+    . ...etc
 2. Improve your performance on validation set
-    . Regularization technique 
+    . Regularization technique
     . More data
 3. Improve your performance on testing set
     . Make dev-set bigger -> to prevent over-fitting to the dev-set
@@ -47,6 +56,7 @@ your priorities are as listed below in order:
     . Changing the dev-set
 
 ## Single Number Evaluation metrics
+
 Mostly in Machine learning applications the metrics of performance aren't just the accuracy, there is also
 time performance, the memory required, Precision and recall, there may be even more metrics depending on
 what you want the final system to look like.
@@ -59,30 +69,37 @@ The answer is simple, you need to define what **"better"** means, in a sense, wh
 that given a model would output a single number representing the *fitness value* of that model.    
 
 ### Precision and recall
+
 they are evaluation metrics for classification problems  
 **Precision:** for any class A, it's the percentage ratio between correctly classified samples of that class
 and the number of samples classified as class A.  
 in other words, out of all samples that were classified as A, how many were correct?   
-```
+
+```math
 (correctly Classified samples) / (all classifications)
 ```
 
 **Recall:** for any class A, it's the percentage ratio between correctly classified samples of that class 
 and the number of samples of that class in the dataset.  
 in other words, out of all samples of class A in the validation set, how many were correctly classified?  
-```
+
+```math
 (correctly Classified asamples) / (all samples)
 ```
 
-##### F1 score
+#### F1 score
+
 - it's the standard way to combine *Precision* and *Recall*, 
 - it's the harmonic mean of *Precision* and *Recall*
-```
+
+```math
 F1_score = 2 / (1/P + 1/R)
 ```
+
 where *P* is Precision and *R* is recall.
 
 ### Satisficing and optimizing parameters
+
 there are 2 different type of metrics of performance of a model in terms of how they are enforced on the model  
 **Satisficing parameters**: they are parameters that are under range constraints, using thresholds, for example
 the execution time must be less than 1 sec, unless the model satisfies this criterion, it's rejected.
@@ -99,6 +116,7 @@ constraints, you may not want to accept a model if its accuracy is below a certa
 reach.  
 
 ### Single Evaluation metric: How to?
+
 Most of the time you would try to place the satisficing constraints on all metrics of interest except the one you
 want to optimize.
 
@@ -116,13 +134,15 @@ There is also another method that you can try to do the evaluation, it's to embe
 function based on the way you want, however this method is complicated since you need to tune the relations between
 the parameters when used in the same equation, the least example is using a linear combination, you would need
 to tune the parameter of each of the metrics
-```
+
+```math
 cost = A * Accuracy + B * Time + C * memory 
 ```
+
 you minimize the loss function and tune the parameters A, B, and C to the value that fits your priorities, this
 process is complicated, adds more tuning, and requires better understanding of the relation between the parameters
 to form a realistic cost function, so it's always better to use the first method to independently optimize the metrics 
-we want.   
+we want.
 
 #### Notes
 
@@ -133,7 +153,8 @@ Which would you prefer a classifier with 99% accuracy that allows porn images, o
 So how do we prevent our model from allowing Porn images?, in this simple case we can modify the cost function by adding a weight to the loss of each sample, if the miss-classified sample is normal the weight is just 1, when it's a Porn image the weight is a large number like 10, this way the model will be pushed to prioritize the prevention of Porn images.  
 
 This fault occurred because the evaluation metric wasn't set correctly, those metrics are not just the problem definition, the metrics you create must really reflect the needs of your application, and the real working environment.
- 
+
 ## Summary
+
 1. Orthogonalization means that you use *one technique* to carry *one job* and affect only *one variable*.
 2. Early stopping affects both training and testing accuracy.
