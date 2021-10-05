@@ -36,10 +36,10 @@ def get_simple_classification_data():
 
 def get_simple_regression_model():
   model = K.Sequential([Dense(1, input_shape=(1,), activation='linear')])
-  model.compile(optimizer='sgd', loss='mse')
+  model.compile(optimizer='adam', loss='mse')
   return model
 
 def get_simple_classification_model():
   model = K.Sequential([Dense(1, input_shape=(2,), activation='sigmoid')])
-  model.compile(optimizer='sgd', loss='binary_crossentropy')
+  model.compile(optimizer='adam', loss='binary_crossentropy')
   return model
