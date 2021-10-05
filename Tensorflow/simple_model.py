@@ -33,3 +33,13 @@ def get_simple_classification_data():
   test_y = tf.cast(test_x[:,1] + test_x[:,0] > 15, tf.float32)
 
   return (x, y), (test_x, test_y)
+
+def get_simple_regression_model():
+  model = K.Sequential([Dense(1, input_shape=(1,), activation='linear')])
+  model.compile(optimizer='sgd', loss='mse')
+  return model
+
+def get_simple_classification_model():
+  model = K.Sequential([Dense(1, input_shape=(2,), activation='sigmoid')])
+  model.compile(optimizer='sgd', loss='binary_crossentropy')
+  return model
