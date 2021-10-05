@@ -15,3 +15,12 @@ def train_model(loss_fn, x, y, test_x, test_y, epochs_step = 10, steps = 5):
       LossPlotCallback(epochs_step=epochs_step, steps=steps)
     ]
   )
+
+def get_simple_regression_data():
+  x = tf.random.uniform([100, 1], minval=0, maxval=20, dtype=tf.float32)
+  y = x * 2  + 7 + tf.random.normal([100, 1])
+
+  test_x = tf.random.uniform([10, 1], minval=0, maxval=20, dtype=tf.float32)
+  test_y = test_x * 2  + 7 + tf.random.normal([10, 1])
+
+  return (x, y), (test_x, test_y)  
