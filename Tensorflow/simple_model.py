@@ -24,3 +24,12 @@ def get_simple_regression_data():
   test_y = test_x * 2  + 7 + tf.random.normal([10, 1])
 
   return (x, y), (test_x, test_y)  
+
+def get_simple_classification_data():
+  x = tf.random.uniform([100, 2], minval=0, maxval=20, dtype=tf.float32)
+  y = tf.cast(x[:,1] + x[:,0] > 17, tf.float32)
+
+  test_x = tf.random.uniform([10, 2], minval=0, maxval=20, dtype=tf.float32)
+  test_y = tf.cast(test_x[:,1] + test_x[:,0] > 15, tf.float32)
+
+  return (x, y), (test_x, test_y)
