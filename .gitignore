@@ -1,3 +1,3 @@
-ignored/
+**/ignored/
 
 **/__pycache__/
