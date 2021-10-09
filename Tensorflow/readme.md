@@ -21,7 +21,7 @@ This module will contain multiple jupyter notebooks, demonstrating the basic usa
 7. [x] [Customization: custom model](./custom_model.ipynb): it demonstrates how to create a custom model in Tensorflow, using `Resnet18` and `VGG16` as examples.
 8. [x] [Callbacks](./callbacks.ipynb): it explains what callbacks are, how to use built-in callbacks, and how to build your own.
 9. [x] [What is a tensor?](./tensors.ipynb): covers what tensor is, how to create it and use it.
-10. [ ] [Gradient Tape](./gradient-tape.ipynb): it explains how to use the gradient tape to calculate gradients, as a step to customize the leasrning process.
+10. [x] [Gradient Tape](./gradient-tape.ipynb): it explains how to use the gradient tape to calculate gradients, as a step to customize the leasrning process.
 11. [ ] Customization: custom optimizer - notebook
 12. [ ] Notes and remarks
 
