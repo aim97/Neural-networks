@@ -18,14 +18,15 @@ This module will contain multiple jupyter notebooks, demonstrating the basic usa
 4. [x] [Functional API 2 - notebook](./FunctionalAPI-2.ipynb): it demonstrates the use of Tensorflow functional API, which can be used to build more complex models.
 5. [x] [Customization: custom layer - notebook](./custom-layer.ipynb): it demonstrates how to create a custom layer in Tensorflow.
 6. [x] [Customization: custom loss - notebook](./custom-loss.ipynb): it demonstrates how to create a custom loss in Tensorflow.
-7. [x] [Customization: custom model](./custom_model.ipynb): it demonstrates how to create a custom model in Tensorflow, using `Resnet18` and `VGG16` as examples.
-8. [x] [Callbacks](./callbacks.ipynb): it explains what callbacks are, how to use built-in callbacks, and how to build your own.
-9. [ ] Metrics: it explains what metrics are, how to use built-in metrics, and how to build your own.
-10. [x] [What is a tensor?](./tensors.ipynb): covers what tensor is, how to create it and use it.
-11. [x] [Gradient Tape](./gradient-tape.ipynb): it explains how to use the gradient tape to calculate gradients, as a step to customize the leasrning process.
-12. [x] [custom training](./custom-training.ipynb): it demonstrates how to create a custom training loop in Tensorflow, you may want to use that if you want to do training in an inconventional way, like using more than the first derivate.
-13. [ ] Customization: custom optimizer - notebook
-14. [ ] Notes and remarks
+7. [ ] Metrics: it explains what metrics are, how to use built-in metrics, and how to build your own.
+8. [x] [Customization: custom model](./custom_model.ipynb): it demonstrates how to create a custom model in Tensorflow, using `Resnet18` and `VGG16` as examples.
+9. [x] [Callbacks](./callbacks.ipynb): it explains what callbacks are, how to use built-in callbacks, and how to build your own.
+10. [ ] Customization: custom optimizer - notebook
+11. [x] [What is a tensor?](./tensors.ipynb): covers what tensor is, how to create it and use it.
+12. [x] [Gradient Tape](./gradient-tape.ipynb): it explains how to use the gradient tape to calculate gradients, as a step to customize the leasrning process.
+13. [x] [custom training](./custom-training.ipynb): it demonstrates how to create a custom training loop in Tensorflow, you may want to use that if you want to do training in an inconventional way, like using more than the first derivate.
+14. [ ] Graph mode - notebook
+15. [ ] Notes and remarks
 
 ### Advanced
 
